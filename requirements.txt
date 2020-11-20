@@ -1,0 +1,4 @@
+Flask==1.1.2
+redis==3.4.1
+gunicorn>=19,<20
+elastic-apm[flask]
