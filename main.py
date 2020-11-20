@@ -33,8 +33,6 @@ def reset_visitor():
     visitor_num = redis.get('visitor').decode("utf-8")
     return "Visitor is reset to %s" % (visitor_num)
 
-
-
 @app.route('/erro')
 
 def index():
