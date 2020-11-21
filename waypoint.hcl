@@ -2,7 +2,7 @@ project = "flask-example"
 
 app "flask-example_app" {
   labels = {
-    "service" = "flask-example_app",
+    "service" = "flask-example",
     "env" = "dev"
   }
 
@@ -11,8 +11,9 @@ app "flask-example_app" {
   }
 
   deploy { 
-    use "docker" {
-        service_port = 8000
+    use "exec" {
+        command = ["docker-compose", "up", "-d"]
     }
   }
 }
+
