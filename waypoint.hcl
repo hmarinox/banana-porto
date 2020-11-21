@@ -1,6 +1,6 @@
 project = "flask-example"
 
-app "flask-example_app {
+app "flask-example_app" {
   labels = {
     "service" = "flask-example_app",
     "env" = "dev"
