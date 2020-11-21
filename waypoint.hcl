@@ -1,8 +1,8 @@
-project = "example-python"
+project = "flask-example"
 
-app "example-python" {
+app "flask-example_app {
   labels = {
-    "service" = "example-python",
+    "service" = "flask-example_app",
     "env" = "dev"
   }
 
