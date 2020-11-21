@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config['ELASTIC_APM'] = {
           'SERVICE_NAME': 'FlaskApp',
           'SECRET_TOKEN': '',         
-          'SERVER_URL': 'http://localhost:8200'
+          'SERVER_URL': 'http://apmserver.docker.local:8200'
 }
 apm = ElasticAPM(app)
 
@@ -33,15 +33,13 @@ def reset_visitor():
     visitor_num = redis.get('visitor').decode("utf-8")
     return "Visitor is reset to %s" % (visitor_num)
 
-@app.route('/erro')
-
-def index():
- return "Quebra!"
+@app.route('/404')
 
 @app.errorhandler(404)
 def not_found_error(error):
  return render_template('404.html'), 404
 
+@app.route('/500')
 
 @app.errorhandler(500)
 def internal_error(error):
