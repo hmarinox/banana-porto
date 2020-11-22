@@ -253,14 +253,14 @@ apm-server:
   # Specify cache key expiration via this setting. Default is 30 seconds.
   #agent.config.cache.expiration: 30s
 
-  kibana:
+  #kibana:
     # For APM Agent configuration in Kibana, enabled must be true.
-    enabled: true
+  #  enabled: falss
 
     # Scheme and port can be left out and will be set to the default (`http` and `5601`).
     # In case you specify an additional path, the scheme is required: `http://localhost:5601/path`.
     # IPv6 addresses should always be defined as: `https://[2001:db8::1]:5601`.
-    host: "kibana.docker.local:5601"
+#    host: "kibana.docker.local:5601"
 
     # Optional protocol and basic auth credentials.
     #protocol: "https"
