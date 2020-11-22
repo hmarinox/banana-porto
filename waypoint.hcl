@@ -12,8 +12,8 @@ app "flask-example_app" {
 
   deploy { 
     use "exec" {
-        command = ["docker-compose", "down"]
-        command = ["docker-compose", "up", "-d"]
+        command = ["./compose.sh"]
+
     }
   }
 }
