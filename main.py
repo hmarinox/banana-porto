@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config['ELASTIC_APM'] = {
           'SERVICE_NAME': 'FlaskApp',
           'SECRET_TOKEN': '',         
-          'SERVER_URL': 'http://apmserver.docker.local:8200'
+          'SERVER_URL': 'apmserver:8200'
 }
 apm = ElasticAPM(app)
 
