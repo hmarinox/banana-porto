@@ -44,11 +44,7 @@ services:
         - '/var/run/docker.sock:/var/run/docker.sock:ro'
     environment:
         - 'true'
-    ports:
-      - 8200:8200
-    depends_on:
-      - elasticsearch
-      - logstash
+    command: ["--strict.perms=false"]
 
   kibana:
     image: docker.elastic.co/kibana/kibana:7.6.2
