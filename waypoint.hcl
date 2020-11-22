@@ -11,9 +11,11 @@ app "flask-example_app" {
   }
 
   deploy { 
-    use "exec" {
-        command = ["./compose.sh"]
-
+    use "docker" {
+       # command = ["./compose.sh"]
+        client_config {
+          host = "ssh://ubuntu@192.168.64.11"
+        }
     }
   }
 }
