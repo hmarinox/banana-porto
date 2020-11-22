@@ -50,5 +50,6 @@ services:
     volumes:
       - ./filebeat.docker.yml:/usr/share/filebeat/filebeat.yml
       - /var/lib/docker/containers:/hostfs/var/lib/docker/containers
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     command: filebeat -e -E output.elasticsearch.username=elastic -E output.elasticsearch.password=${ES_PASSWORD} -strict.perms=false
     restart: on-failure
